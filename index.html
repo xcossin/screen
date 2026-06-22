@@ -1,61 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>智慧养老数据中心-适配版</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            background-color: #000;
-        }
-
-        /* 容器用于定位 */
-        .container {
-            width: 1920px;   /* 原始设计的宽度 */
-            height: 1080px;  /* 原始设计的高度 */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform-origin: center center; /* 从中心缩放 */
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>自动跳转</title>
 </head>
 <body>
-    <div class="container" id="scaler">
-        <iframe src="http://admin.zhelder.com/admin/index.html#/screen?FID=F4830EA6-23BE-417B-B1F8-5E8827A6C1C4"></iframe>
-    </div>
+页面正在跳转至 xcossin/screen 仓库...
+<br>若未自动跳转，请<a href="http://admin.zhelder.com/admin/index.html#/screen?FID=F4830EA6-23BE-417B-B1F8-5E8827A6C1C4">点击此处</a>
 
-    <script>
-        function resize() {
-            const designWidth = 1920;
-            const designHeight = 1080;
-            const clientWidth = window.innerWidth;
-            const clientHeight = window.innerHeight;
-            
-            // 计算缩放比例
-            const scaleX = clientWidth / designWidth;
-            const scaleY = clientHeight / designHeight;
-            
-            // 选择较小的比例，确保内容全部显示在屏幕内 (保持比例)
-            // 如果你想铺满全屏不顾变形，可以分别用 scaleX 和 scaleY
-            const scale = Math.min(scaleX, scaleY);
-            
-            const el = document.getElementById('scaler');
-            el.style.transform = `translate(-50%, -50%) scale(${scale})`;
-        }
-
-        window.onresize = resize;
-        resize(); // 初始化调用
-    </script>
+<script>
+// 延迟100ms跳转，避免被浏览器判定为恶意跳转
+setTimeout(function() {
+window.location.href = "https://github.com/xcossin/screen";
+}, 100);
+</script>
 </body>
 </html>
